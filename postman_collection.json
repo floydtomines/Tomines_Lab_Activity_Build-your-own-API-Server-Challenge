@@ -1,0 +1,73 @@
+{
+  "info": {
+    "name": "GameVault API",
+    "description": "CRUD tests for the GameVault video game REST API.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:5000"
+    }
+  ],
+  "item": [
+    {
+      "name": "GET all games",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/games"
+      }
+    },
+    {
+      "name": "GET one game",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/games/1"
+      }
+    },
+    {
+      "name": "POST create game",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Sea of Stars\",\n  \"year\": 2023,\n  \"genre\": \"RPG\",\n  \"platform\": \"PC\",\n  \"developer\": \"Sabotage Studio\",\n  \"rating\": 8.8,\n  \"description\": \"A throwback turn-based RPG with modern craft.\"\n}"
+        },
+        "url": "{{baseUrl}}/games"
+      }
+    },
+    {
+      "name": "PUT update game",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Celeste\",\n  \"year\": 2018,\n  \"genre\": \"Precision Platformer\",\n  \"platform\": \"Nintendo Switch\",\n  \"developer\": \"Maddy Makes Games\",\n  \"rating\": 9.2,\n  \"description\": \"Updated catalog copy.\"\n}"
+        },
+        "url": "{{baseUrl}}/games/2"
+      }
+    },
+    {
+      "name": "DELETE game",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/games/16"
+      }
+    }
+  ]
+}
